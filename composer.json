@@ -1,0 +1,39 @@
+{
+    "name": "tomato-technologies/tomato-pdfmerger",
+    "type": "library",
+    "description": "PDFmerge Wrapper for Laravel project",
+    "keywords": ["tomato technologies"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Wayne Wen",
+            "email": "wayne.w@tomatotechnologies.com.au"
+        }
+    ],
+    "require": {
+        "illuminate/queue": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
+        "illuminate/contracts": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
+        "illuminate/support": "5.2.x|5.3.x|5.4.x|5.5.x|5.6.x|5.7.x",
+        "symfony/process": "~3.4||~4.1"
+    },
+    "autoload": {
+        "psr-4": {
+            "Tomato\\OmiPay\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Tomato\\PDFMerger\\ServiceProvider"
+            ],
+            "aliases": {
+                "TomatoOmiPay": "Tomato\\PDFMerger\\Facade"
+            }
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "echo \"Please remember to set ENV value for binary path: 'PDFMERGE_BIN'\""
+        ]
+    }
+}
